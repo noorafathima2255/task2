@@ -1,0 +1,3490 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/dddb24d640.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Model Design</title>
+    <style>
+      /* Add your SCSS code here */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+      /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+      @media (max-width: 768px) {
+        .model {
+          width: 80%;
+        }
+
+        .modal-content {
+          width: 80%;
+        }
+      }
+      /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+      @media (max-width: 480px) {
+        .modal {
+          width: 90%;
+        }
+
+        .modal-content {
+          width: 100%;
+          height: auto;
+          padding: 10px;
+        }
+      }
+
+      .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 600px;
+      }
+      /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+      @media (max-width: 768px) {
+        .model-content {
+          width: 80%;
+        }
+
+        .close {
+          width: 80%;
+        }
+      }
+      /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+      @media (max-width: 480px) {
+        .modal-content {
+          width: 90%;
+        }
+
+        .close {
+          width: 100%;
+          height: auto;
+          padding: 10px;
+        }
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+      @media (max-width: 768px) {
+        .close {
+          width: 80%;
+        }
+
+        .close:hover,
+        .close:focus {
+          width: 80%;
+        }
+      }
+      /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+      @media (max-width: 480px) {
+        .close {
+          width: 90%;
+        }
+
+        .close:hover,
+        .close:focus {
+          width: 100%;
+          height: auto;
+          padding: 10px;
+        }
+      }
+      /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+      @media (max-width: 768px) {
+        .close:hover,
+        .close:focus {
+          width: 80%;
+        }
+      }
+      /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+      @media (max-width: 480px) {
+        .close:hover,
+        .close:focus {
+          width: 90%;
+        }
+      }
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="openModal">Open Model</button>
+
+    <div class="modal" id="myModal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <!DOCTYPE html>
+        <html lang="en">
+          <head>
+            <meta charset="UTF-8" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1.0"
+            />
+            <title>Document</title>
+            <style>
+              .adm-modal,
+              .adm-modal * {
+                box-sizing: border-box;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .adm-modal,
+                .adm-modal * {
+                  width: 80%;
+                }
+
+                .adm-modal {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .adm-modal,
+                .adm-modal * {
+                  width: 90%;
+                }
+
+                .adm-modal {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+
+              .adm-modal {
+                background: #ffffff;
+                border-radius: 6px;
+                width: 100%;
+                height: 605px;
+                position: relative;
+                box-shadow: 0px 4px 75px 0px rgba(0, 0, 0, 0.15);
+                overflow: hidden;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .adm-modal {
+                  width: 80%;
+                }
+
+                .rectangle-33 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .adm-modal {
+                  width: 90%;
+                }
+
+                .rectangle-33 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+
+              .rectangle-33 {
+                background: linear-gradient(
+                    -89.96deg,
+                    rgba(255, 250, 224, 1) 0%,
+                    rgba(240, 255, 246, 0) 100%
+                  ),
+                  linear-gradient(to left, #ffc0c0, #ffc0c0);
+                width: 385px;
+                height: 53px;
+                position: absolute;
+                left: -2px;
+                top: 0px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .rectangle-33 {
+                  width: 80%;
+                }
+
+                .ethan-wong {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .rectangle-33 {
+                  width: 90%;
+                }
+
+                .ethan-wong {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+
+              .ethan-wong {
+                color: #00252f;
+                text-align: left;
+                font: 400 12px "Roboto", sans-serif;
+                position: absolute;
+                left: 45px;
+                top: 11px;
+                width: 89px;
+                height: 14px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .ethan-wong {
+                  width: 80%;
+                }
+
+                .male-60-yrs-senior-citizen {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .ethan-wong {
+                  width: 90%;
+                }
+
+                .male-60-yrs-senior-citizen {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+
+              .male-60-yrs-senior-citizen {
+                color: rgba(0, 37, 47, 0.56);
+                text-align: left;
+                font: 400 10px "Roboto", sans-serif;
+                position: absolute;
+                left: 45px;
+                top: 29px;
+                width: 127px;
+                height: 14px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .male-60-yrs-senior-citizen {
+                  width: 80%;
+                }
+
+                .male-1 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .male-60-yrs-senior-citizen {
+                  width: 90%;
+                }
+
+                .male-1 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+
+              .male-1 {
+                width: 24px;
+                height: 24px;
+                position: absolute;
+                left: 12px;
+                top: 13px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .male-1 {
+                  width: 80%;
+                }
+
+                .frame-148 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .male-1 {
+                  width: 90%;
+                }
+
+                .frame-148 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+
+              .frame-148 {
+                background: #ffffff;
+                border-radius: 4px;
+                border-style: solid;
+                border-color: #f2f2f2;
+                border-width: 1px;
+                padding: 4px;
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                align-items: center;
+                justify-content: center;
+                width: 67px;
+                position: absolute;
+                left: 310px;
+                top: 25px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .frame-148 {
+                  width: 80%;
+                }
+
+                .malaysia {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .frame-148 {
+                  width: 90%;
+                }
+
+                .malaysia {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .malaysia {
+                color: #666666;
+                text-align: left;
+                font: 400 12px "Roboto", sans-serif;
+                position: relative;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .malaysia {
+                  width: 80%;
+                }
+
+                .resident {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .malaysia {
+                  width: 90%;
+                }
+
+                .resident {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .resident {
+                color: #888888;
+                text-align: left;
+                font: 400 10px "Roboto", sans-serif;
+                position: absolute;
+                left: 336px;
+                top: 9px;
+                width: 41px;
+                height: 9px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .resident {
+                  width: 80%;
+                }
+
+                .group-144 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .resident {
+                  width: 90%;
+                }
+
+                .group-144 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .group-144 {
+                position: absolute;
+                inset: 0;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .group-144 {
+                  width: 80%;
+                }
+
+                .rectangle-35 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .group-144 {
+                  width: 90%;
+                }
+
+                .rectangle-35 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .rectangle-35 {
+                background: #ffffff;
+                border-radius: 4px;
+                border-style: solid;
+                border-color: transparent;
+                border-width: 1px;
+                width: 170px;
+                height: 41px;
+                position: absolute;
+                left: 10px;
+                top: 108px;
+                box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .rectangle-35 {
+                  width: 80%;
+                }
+
+                .bed {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .rectangle-35 {
+                  width: 90%;
+                }
+
+                .bed {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .bed {
+                color: #aaaaaa;
+                text-align: left;
+                font: 400 10px "Roboto", sans-serif;
+                position: absolute;
+                left: 18px;
+                top: 112px;
+                width: 21px;
+                height: 9px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .bed {
+                  width: 80%;
+                }
+
+                .f-5-102 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .bed {
+                  width: 90%;
+                }
+
+                .f-5-102 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .f-5-102 {
+                color: #6c6c6c;
+                text-align: left;
+                font: 400 10px "Roboto", sans-serif;
+                position: absolute;
+                left: 42px;
+                top: 113px;
+                width: 49px;
+                height: 9px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .f-5-102 {
+                  width: 80%;
+                }
+
+                .frame-152 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .f-5-102 {
+                  width: 90%;
+                }
+
+                .frame-152 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .frame-152 {
+                background: #fff6ef;
+                border-radius: 0px 0px 4px 4px;
+                padding: 8px;
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                align-items: center;
+                justify-content: flex-start;
+                width: 170px;
+                height: 20px;
+                position: absolute;
+                left: 10px;
+                top: 129px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .frame-152 {
+                  width: 80%;
+                }
+
+                .single-bed {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .frame-152 {
+                  width: 90%;
+                }
+
+                .single-bed {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .single-bed {
+                color: #666666;
+                text-align: left;
+                font: 400 12px "Roboto", sans-serif;
+                position: relative;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .single-bed {
+                  width: 80%;
+                }
+
+                .fontisto-bed-patient {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .single-bed {
+                  width: 90%;
+                }
+
+                .fontisto-bed-patient {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .fontisto-bed-patient {
+                position: absolute;
+                left: 159px;
+                top: 112px;
+                overflow: visible;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .fontisto-bed-patient {
+                  width: 80%;
+                }
+
+                .group-146 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .fontisto-bed-patient {
+                  width: 90%;
+                }
+
+                .group-146 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .group-146 {
+                position: absolute;
+                inset: 0;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .group-146 {
+                  width: 80%;
+                }
+
+                .rectangle-40 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .group-146 {
+                  width: 90%;
+                }
+
+                .rectangle-40 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .rectangle-40 {
+                background: #ffffff;
+                border-radius: 4px;
+                border-style: solid;
+                border-color: transparent;
+                border-width: 1px;
+                width: 117px;
+                height: 41px;
+                position: absolute;
+                left: 257px;
+                top: 60px;
+                box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .rectangle-40 {
+                  width: 80%;
+                }
+
+                .ward {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .rectangle-40 {
+                  width: 90%;
+                }
+
+                .ward {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .ward {
+                color: #aaaaaa;
+                text-align: left;
+                font: 400 10px "Roboto", sans-serif;
+                position: absolute;
+                left: 265px;
+                top: 66px;
+                width: 58px;
+                height: 9px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .ward {
+                  width: 80%;
+                }
+
+                .frame-150 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .ward {
+                  width: 90%;
+                }
+
+                .frame-150 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .frame-150 {
+                background: #fff6ef;
+                border-radius: 0px 0px 4px 4px;
+                padding: 8px;
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                align-items: center;
+                justify-content: flex-start;
+                width: 117px;
+                height: 20px;
+                position: absolute;
+                left: 257px;
+                top: 81px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .frame-150 {
+                  width: 80%;
+                }
+
+                .ward-2-a {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .frame-150 {
+                  width: 90%;
+                }
+
+                .ward-2-a {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .ward-2-a {
+                color: #666666;
+                text-align: left;
+                font: 400 12px "Roboto", sans-serif;
+                position: relative;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .ward-2-a {
+                  width: 80%;
+                }
+
+                .fa-solid-hospital {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .ward-2-a {
+                  width: 90%;
+                }
+
+                .fa-solid-hospital {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .fa-solid-hospital {
+                position: absolute;
+                left: 360px;
+                top: 67px;
+                overflow: visible;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .fa-solid-hospital {
+                  width: 80%;
+                }
+
+                .group-145 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .fa-solid-hospital {
+                  width: 90%;
+                }
+
+                .group-145 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .group-145 {
+                position: absolute;
+                inset: 0;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .group-145 {
+                  width: 80%;
+                }
+
+                .rectangle-37 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .group-145 {
+                  width: 90%;
+                }
+
+                .rectangle-37 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .rectangle-37 {
+                background: #ffffff;
+                border-radius: 4px;
+                border-style: solid;
+                border-color: transparent;
+                border-width: 1px;
+                width: 190px;
+                height: 41px;
+                position: absolute;
+                left: 184px;
+                top: 108px;
+                box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .rectangle-37 {
+                  width: 80%;
+                }
+
+                .payor {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .rectangle-37 {
+                  width: 90%;
+                }
+
+                .payor {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .payor {
+                color: #aaaaaa;
+                text-align: left;
+                font: 400 10px "Roboto", sans-serif;
+                position: absolute;
+                left: 192px;
+                top: 113px;
+                width: 94px;
+                height: 9px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .payor {
+                  width: 80%;
+                }
+
+                .frame-151 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .payor {
+                  width: 90%;
+                }
+
+                .frame-151 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .frame-151 {
+                background: linear-gradient(to left, #fff6ef, #fff6ef);
+                border-radius: 0px 0px 4px 4px;
+                padding: 8px;
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                align-items: center;
+                justify-content: flex-start;
+                width: 190px;
+                height: 20px;
+                position: absolute;
+                left: 184px;
+                top: 129px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .frame-151 {
+                  width: 80%;
+                }
+
+                .aia-bhd-individual {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .frame-151 {
+                  width: 90%;
+                }
+
+                .aia-bhd-individual {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .aia-bhd-individual {
+                color: #666666;
+                text-align: left;
+                font: 400 12px "Roboto", sans-serif;
+                position: relative;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .aia-bhd-individual {
+                  width: 80%;
+                }
+
+                .group-147 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .aia-bhd-individual {
+                  width: 90%;
+                }
+
+                .group-147 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .group-147 {
+                position: absolute;
+                inset: 0;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .group-147 {
+                  width: 80%;
+                }
+
+                .rectangle-39 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .group-147 {
+                  width: 90%;
+                }
+
+                .rectangle-39 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .rectangle-39 {
+                background: #ffffff;
+                border-radius: 4px;
+                border-style: solid;
+                border-color: transparent;
+                border-width: 1px;
+                width: 117px;
+                height: 41px;
+                position: absolute;
+                left: 134px;
+                top: 60px;
+                box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .rectangle-39 {
+                  width: 80%;
+                }
+
+                .visit-id {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .rectangle-39 {
+                  width: 90%;
+                }
+
+                .visit-id {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .visit-id {
+                color: #aaaaaa;
+                text-align: left;
+                font: 400 10px "Roboto", sans-serif;
+                position: absolute;
+                left: 142px;
+                top: 64px;
+                width: 58px;
+                height: 9px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .visit-id {
+                  width: 80%;
+                }
+
+                .frame-149 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .visit-id {
+                  width: 90%;
+                }
+
+                .frame-149 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .frame-149 {
+                background: #fff6ef;
+                border-radius: 0px 0px 4px 4px;
+                padding: 8px;
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                align-items: center;
+                justify-content: flex-start;
+                width: 117px;
+                height: 20px;
+                position: absolute;
+                left: 134px;
+                top: 81px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .frame-149 {
+                  width: 80%;
+                }
+
+                ._2735678 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .frame-149 {
+                  width: 90%;
+                }
+
+                ._2735678 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              ._2735678 {
+                color: #666666;
+                text-align: left;
+                font: 400 12px "Roboto", sans-serif;
+                position: relative;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                ._2735678 {
+                  width: 80%;
+                }
+
+                .bx-bxs-calendar {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                ._2735678 {
+                  width: 90%;
+                }
+
+                .bx-bxs-calendar {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .bx-bxs-calendar {
+                position: absolute;
+                left: 235px;
+                top: 65px;
+                overflow: visible;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .bx-bxs-calendar {
+                  width: 80%;
+                }
+
+                .group-148 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .bx-bxs-calendar {
+                  width: 90%;
+                }
+
+                .group-148 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .group-148 {
+                position: absolute;
+                inset: 0;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .group-148 {
+                  width: 80%;
+                }
+
+                .rectangle-38 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .group-148 {
+                  width: 90%;
+                }
+
+                .rectangle-38 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .rectangle-38 {
+                background: #ffffff;
+                border-radius: 4px;
+                border-style: solid;
+                border-color: transparent;
+                border-width: 1px;
+                width: 117px;
+                height: 41px;
+                position: absolute;
+                left: 10px;
+                top: 60px;
+                box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .rectangle-38 {
+                  width: 80%;
+                }
+
+                .patient-id {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .rectangle-38 {
+                  width: 90%;
+                }
+
+                .patient-id {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .patient-id {
+                color: #aaaaaa;
+                text-align: left;
+                font: 400 10px "Roboto", sans-serif;
+                position: absolute;
+                left: 18px;
+                top: 65px;
+                width: 58px;
+                height: 9px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .patient-id {
+                  width: 80%;
+                }
+
+                .frame-146 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .patient-id {
+                  width: 90%;
+                }
+
+                .frame-146 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .frame-146 {
+                background: #fff6ef;
+                border-radius: 0px 0px 4px 4px;
+                padding: 8px;
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                align-items: center;
+                justify-content: flex-start;
+                width: 117px;
+                height: 20px;
+                position: absolute;
+                left: 10px;
+                top: 81px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .frame-146 {
+                  width: 80%;
+                }
+
+                ._5321344 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .frame-146 {
+                  width: 90%;
+                }
+
+                ._5321344 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              ._5321344 {
+                color: #666666;
+                text-align: left;
+                font: 400 12px "Roboto", sans-serif;
+                position: relative;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                ._5321344 {
+                  width: 80%;
+                }
+
+                .bx-bxs-id-card {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                ._5321344 {
+                  width: 90%;
+                }
+
+                .bx-bxs-id-card {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .bx-bxs-id-card {
+                position: absolute;
+                left: 109px;
+                top: 65px;
+                overflow: visible;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .bx-bxs-id-card {
+                  width: 80%;
+                }
+
+                .rectangle-32 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .bx-bxs-id-card {
+                  width: 90%;
+                }
+
+                .rectangle-32 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .rectangle-32 {
+                background: #f8f8f8;
+                border-radius: 6px 6px 8px 8px;
+                width: 383px;
+                height: 557px;
+                position: absolute;
+                left: 0px;
+                top: 165px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .rectangle-32 {
+                  width: 80%;
+                }
+
+                .admission-journey {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .rectangle-32 {
+                  width: 90%;
+                }
+
+                .admission-journey {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .admission-journey {
+                color: #00252f;
+                text-align: left;
+                font: 100 18px "Roboto", sans-serif;
+                position: absolute;
+                left: 20px;
+                top: 178px;
+                width: 182px;
+                height: 17px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .admission-journey {
+                  width: 80%;
+                }
+
+                .admission-request {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .admission-journey {
+                  width: 90%;
+                }
+
+                .admission-request {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .admission-request {
+                color: #555555;
+                text-align: left;
+                font: 500 12px "Roboto", sans-serif;
+                position: absolute;
+                left: 91px;
+                top: 230px;
+                width: 112px;
+                height: 17px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .admission-request {
+                  width: 80%;
+                }
+
+                .sent-for-igl-approval {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .admission-request {
+                  width: 90%;
+                }
+
+                .sent-for-igl-approval {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .sent-for-igl-approval {
+                color: #555555;
+                text-align: left;
+                font: 500 12px "Roboto", sans-serif;
+                position: absolute;
+                left: 91px;
+                top: 289px;
+                width: 121px;
+                height: 17px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .sent-for-igl-approval {
+                  width: 80%;
+                }
+
+                .received-igl-approval {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .sent-for-igl-approval {
+                  width: 90%;
+                }
+
+                .received-igl-approval {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .received-igl-approval {
+                color: #555555;
+                text-align: left;
+                font: 500 12px "Roboto", sans-serif;
+                position: absolute;
+                left: 91px;
+                top: 352px;
+                width: 126px;
+                height: 17px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .received-igl-approval {
+                  width: 80%;
+                }
+
+                .requested-bed-confirmation {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .received-igl-approval {
+                  width: 90%;
+                }
+
+                .requested-bed-confirmation {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .requested-bed-confirmation {
+                color: #555555;
+                text-align: left;
+                font: 500 12px "Roboto", sans-serif;
+                position: absolute;
+                left: 91px;
+                top: 415px;
+                width: 160px;
+                height: 17px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .requested-bed-confirmation {
+                  width: 80%;
+                }
+
+                .admitted {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .requested-bed-confirmation {
+                  width: 90%;
+                }
+
+                .admitted {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .admitted {
+                color: #555555;
+                text-align: left;
+                font: 500 12px "Roboto", sans-serif;
+                position: absolute;
+                left: 91px;
+                top: 487px;
+                width: 56px;
+                height: 17px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .admitted {
+                  width: 80%;
+                }
+
+                .accepted {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .admitted {
+                  width: 90%;
+                }
+
+                .accepted {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .accepted {
+                color: #555555;
+                text-align: left;
+                font: 500 12px "Roboto", sans-serif;
+                position: absolute;
+                left: 91px;
+                top: 550px;
+                width: 56px;
+                height: 17px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .accepted {
+                  width: 80%;
+                }
+
+                .ratha-ap {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .accepted {
+                  width: 90%;
+                }
+
+                .ratha-ap {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .ratha-ap {
+                color: #777777;
+                text-align: left;
+                font: 400 10px "Roboto", sans-serif;
+                position: absolute;
+                left: 105px;
+                top: 249px;
+                width: 112px;
+                height: 17px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .ratha-ap {
+                  width: 80%;
+                }
+
+                .jim-chin {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .ratha-ap {
+                  width: 90%;
+                }
+
+                .jim-chin {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .jim-chin {
+                color: #777777;
+                text-align: left;
+                font: 400 10px "Roboto", sans-serif;
+                position: absolute;
+                left: 105px;
+                top: 308px;
+                width: 112px;
+                height: 17px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .jim-chin {
+                  width: 80%;
+                }
+
+                .jim-chin2 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .jim-chin {
+                  width: 90%;
+                }
+
+                .jim-chin2 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .jim-chin2 {
+                color: #777777;
+                text-align: left;
+                font: 400 10px "Roboto", sans-serif;
+                position: absolute;
+                left: 105px;
+                top: 371px;
+                width: 112px;
+                height: 17px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .jim-chin2 {
+                  width: 80%;
+                }
+
+                .jim-chin3 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .jim-chin2 {
+                  width: 90%;
+                }
+
+                .jim-chin3 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .jim-chin3 {
+                color: #777777;
+                text-align: left;
+                font: 400 10px "Roboto", sans-serif;
+                position: absolute;
+                left: 105px;
+                top: 434px;
+                width: 112px;
+                height: 17px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .jim-chin3 {
+                  width: 80%;
+                }
+
+                .dec-06-2021-08-36-am {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .jim-chin3 {
+                  width: 90%;
+                }
+
+                .dec-06-2021-08-36-am {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .dec-06-2021-08-36-am {
+                color: #616161;
+                text-align: left;
+                font: 400 10px "Roboto", sans-serif;
+                position: absolute;
+                left: 202px;
+                top: 232px;
+                width: 112px;
+                height: 9px;
+              } /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .dec-06-2021-08-36-am {
+                  width: 80%;
+                }
+
+                .dec-06-2021-09-00-am {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .dec-06-2021-08-36-am {
+                  width: 90%;
+                }
+
+                .dec-06-2021-09-00-am {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+
+              .dec-06-2021-09-00-am {
+                color: #616161;
+                text-align: left;
+                font: 400 10px "Roboto", sans-serif;
+                position: absolute;
+                left: 212px;
+                top: 291px;
+                width: 112px;
+                height: 9px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .dec-06-2021-09-00-am {
+                  width: 80%;
+                }
+
+                .dec-06-2021-11-23-am {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .dec-06-2021-09-00-am {
+                  width: 90%;
+                }
+
+                .dec-06-2021-11-23-am {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .dec-06-2021-11-23-am {
+                color: #616161;
+                text-align: left;
+                font: 400 10px "Roboto", sans-serif;
+                position: absolute;
+                left: 218px;
+                top: 354px;
+                width: 112px;
+                height: 9px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .dec-06-2021-11-23-am {
+                  width: 80%;
+                }
+
+                .dec-06-2021-11-38-am {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .dec-06-2021-11-23-am {
+                  width: 90%;
+                }
+
+                .dec-06-2021-11-38-am {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .dec-06-2021-11-38-am {
+                color: #616161;
+                text-align: left;
+                font: 400 10px "Roboto", sans-serif;
+                position: absolute;
+                left: 251px;
+                top: 417px;
+                width: 112px;
+                height: 9px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .dec-06-2021-11-38-am {
+                  width: 80%;
+                }
+
+                .ellipse-3 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .dec-06-2021-11-38-am {
+                  width: 90%;
+                }
+
+                .ellipse-3 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .ellipse-3 {
+                background: #3ab748;
+                border-radius: 50%;
+                width: 28px;
+                height: 28px;
+                position: absolute;
+                left: 52px;
+                top: 231px;
+                box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .ellipse-3 {
+                  width: 80%;
+                }
+
+                .ellipse-4 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .ellipse-3 {
+                  width: 90%;
+                }
+
+                .ellipse-4 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .ellipse-4 {
+                background: #3ab748;
+                border-radius: 50%;
+                width: 28px;
+                height: 28px;
+                position: absolute;
+                left: 52px;
+                top: 290px;
+                box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .ellipse-4 {
+                  width: 80%;
+                }
+
+                .ellipse-5 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .ellipse-4 {
+                  width: 90%;
+                }
+
+                .ellipse-5 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .ellipse-5 {
+                background: #3ab748;
+                border-radius: 50%;
+                width: 28px;
+                height: 28px;
+                position: absolute;
+                left: 52px;
+                top: 353px;
+                box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .ellipse-5 {
+                  width: 80%;
+                }
+
+                .ellipse-6 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .ellipse-5 {
+                  width: 90%;
+                }
+
+                .ellipse-6 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .ellipse-6 {
+                background: #3ab748;
+                border-radius: 50%;
+                width: 28px;
+                height: 28px;
+                position: absolute;
+                left: 52px;
+                top: 416px;
+                box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .ellipse-6 {
+                  width: 80%;
+                }
+
+                .ellipse-9 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .ellipse-6 {
+                  width: 90%;
+                }
+
+                .ellipse-9 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .ellipse-9 {
+                background: #ffffff;
+                border-radius: 50%;
+                width: 28px;
+                height: 28px;
+                position: absolute;
+                left: 52px;
+                top: 479px;
+                box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .ellipse-9 {
+                  width: 80%;
+                }
+
+                .ellipse-10 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .ellipse-9 {
+                  width: 90%;
+                }
+
+                .ellipse-10 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .ellipse-10 {
+                background: #ffffff;
+                border-radius: 50%;
+                width: 28px;
+                height: 28px;
+                position: absolute;
+                left: 52px;
+                top: 543px;
+                box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .ellipse-10 {
+                  width: 80%;
+                }
+
+                .teenyicons-tick-solid {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .ellipse-10 {
+                  width: 90%;
+                }
+
+                .teenyicons-tick-solid {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .teenyicons-tick-solid {
+                width: 15px;
+                height: 15px;
+                position: absolute;
+                left: 59px;
+                top: 238px;
+                overflow: hidden;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .teenyicons-tick-solid {
+                  width: 80%;
+                }
+
+                .group {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .teenyicons-tick-solid {
+                  width: 90%;
+                }
+
+                .group {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .group {
+                position: absolute;
+                left: 0.29px;
+                top: 2.29px;
+                overflow: visible;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .group {
+                  width: 80%;
+                }
+
+                .teenyicons-tick-solid2 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .group {
+                  width: 90%;
+                }
+
+                .teenyicons-tick-solid2 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .teenyicons-tick-solid2 {
+                width: 15px;
+                height: 15px;
+                position: absolute;
+                left: 59px;
+                top: 297px;
+                overflow: hidden;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .teenyicons-tick-solid2 {
+                  width: 80%;
+                }
+
+                .group2 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .teenyicons-tick-solid2 {
+                  width: 90%;
+                }
+
+                .group2 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .group2 {
+                position: absolute;
+                left: 0.29px;
+                top: 2.29px;
+                overflow: visible;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .group2 {
+                  width: 80%;
+                }
+
+                .teenyicons-tick-solid3 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .group2 {
+                  width: 90%;
+                }
+
+                .teenyicons-tick-solid3 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .teenyicons-tick-solid3 {
+                width: 15px;
+                height: 15px;
+                position: absolute;
+                left: 59px;
+                top: 360px;
+                overflow: hidden;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .teenyicons-tick-solid3 {
+                  width: 80%;
+                }
+
+                .group3 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .teenyicons-tick-solid3 {
+                  width: 90%;
+                }
+
+                .group3 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .group3 {
+                position: absolute;
+                left: 0.29px;
+                top: 2.29px;
+                overflow: visible;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .group3 {
+                  width: 80%;
+                }
+
+                .teenyicons-tick-solid4 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .group3 {
+                  width: 90%;
+                }
+
+                .teenyicons-tick-solid4 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .teenyicons-tick-solid4 {
+                width: 15px;
+                height: 15px;
+                position: absolute;
+                left: 59px;
+                top: 423px;
+                overflow: hidden;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .teenyicons-tick-solid4 {
+                  width: 80%;
+                }
+
+                .group4 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .teenyicons-tick-solid4 {
+                  width: 90%;
+                }
+
+                .group4 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .group4 {
+                position: absolute;
+                left: 0.29px;
+                top: 2.29px;
+                overflow: visible;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .group4 {
+                  width: 80%;
+                }
+
+                .teenyicons-tick-solid5 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .group4 {
+                  width: 90%;
+                }
+
+                .teenyicons-tick-solid5 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .teenyicons-tick-solid5 {
+                width: 15px;
+                height: 15px;
+                position: absolute;
+                left: 59px;
+                top: 486px;
+                overflow: hidden;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .teenyicons-tick-solid5 {
+                  width: 80%;
+                }
+
+                .group5 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .teenyicons-tick-solid5 {
+                  width: 90%;
+                }
+
+                .group5 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .group5 {
+                position: absolute;
+                left: 0.29px;
+                top: 2.29px;
+                overflow: visible;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .group5 {
+                  width: 80%;
+                }
+
+                .fontisto-bed-patient2 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .group5 {
+                  width: 90%;
+                }
+
+                .fontisto-bed-patient2 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .fontisto-bed-patient2 {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                overflow: visible;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .fontisto-bed-patient2 {
+                  width: 80%;
+                }
+
+                .healthicons-doctor {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .fontisto-bed-patient2 {
+                  width: 90%;
+                }
+
+                .healthicons-doctor {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .healthicons-doctor {
+                width: 11px;
+                height: 11px;
+                position: absolute;
+                left: 91px;
+                top: 248px;
+                overflow: hidden;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .healthicons-doctor {
+                  width: 80%;
+                }
+
+                .group6 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .healthicons-doctor {
+                  width: 90%;
+                }
+
+                .group6 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .group6 {
+                position: absolute;
+                left: 1.38px;
+                top: 1.38px;
+                overflow: visible;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .group6 {
+                  width: 80%;
+                }
+
+                .healthicons-doctor2 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .group6 {
+                  width: 90%;
+                }
+
+                .healthicons-doctor2 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .healthicons-doctor2 {
+                width: 11px;
+                height: 11px;
+                position: absolute;
+                left: 91px;
+                top: 307px;
+                overflow: hidden;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .healthicons-doctor2 {
+                  width: 80%;
+                }
+
+                .group7 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .healthicons-doctor2 {
+                  width: 90%;
+                }
+
+                .group7 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .group7 {
+                position: absolute;
+                left: 1.38px;
+                top: 1.38px;
+                overflow: visible;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .group7 {
+                  width: 80%;
+                }
+
+                .healthicons-doctor3 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .group7 {
+                  width: 90%;
+                }
+
+                .healthicons-doctor3 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+
+              .healthicons-doctor3 {
+                width: 11px;
+                height: 11px;
+                position: absolute;
+                left: 91px;
+                top: 370px;
+                overflow: hidden;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .healthicons-doctor3 {
+                  width: 80%;
+                }
+
+                .group8 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .healthicons-doctor3 {
+                  width: 90%;
+                }
+
+                .group8 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .group8 {
+                position: absolute;
+                left: 1.38px;
+                top: 1.38px;
+                overflow: visible;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .group8 {
+                  width: 80%;
+                }
+
+                .healthicons-doctor4 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .group8 {
+                  width: 90%;
+                }
+
+                .healthicons-doctor4 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .healthicons-doctor4 {
+                width: 11px;
+                height: 11px;
+                position: absolute;
+                left: 91px;
+                top: 433px;
+                overflow: hidden;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .healthicons-doctor4 {
+                  width: 80%;
+                }
+
+                .group9 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .healthicons-doctor4 {
+                  width: 90%;
+                }
+
+                .group9 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .group9 {
+                position: absolute;
+                left: 1.38px;
+                top: 1.38px;
+                overflow: visible;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .group9 {
+                  width: 80%;
+                }
+
+                .line-1 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .group9 {
+                  width: 90%;
+                }
+
+                .line-1 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .line-1 {
+                border-style: solid;
+                border-color: rgba(138, 169, 181, 0.24);
+                border-width: 1px 0 0 0;
+                width: 35px;
+                height: 0px;
+                position: absolute;
+                left: 66px;
+                top: 256px;
+                transform-origin: 0 0;
+                transform: rotate(90deg) scale(1, 1);
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .line-1 {
+                  width: 80%;
+                }
+
+                .line-2 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .line-1 {
+                  width: 90%;
+                }
+
+                .line-2 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .line-2 {
+                border-style: solid;
+                border-color: rgba(138, 169, 181, 0.24);
+                border-width: 1px 0 0 0;
+                width: 35px;
+                height: 0px;
+                position: absolute;
+                left: 66px;
+                top: 321px;
+                transform-origin: 0 0;
+                transform: rotate(90deg) scale(1, 1);
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .line-2 {
+                  width: 80%;
+                }
+
+                .line-3 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .line-2 {
+                  width: 90%;
+                }
+
+                .line-3 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .line-3 {
+                border-style: solid;
+                border-color: rgba(138, 169, 181, 0.24);
+                border-width: 1px 0 0 0;
+                width: 35px;
+                height: 0px;
+                position: absolute;
+                left: 66px;
+                top: 382px;
+                transform-origin: 0 0;
+                transform: rotate(90deg) scale(1, 1);
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .line-3 {
+                  width: 80%;
+                }
+
+                .line-8 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .line-3 {
+                  width: 90%;
+                }
+
+                .line-8 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .line-8 {
+                border-style: solid;
+                border-color: rgba(138, 169, 181, 0.24);
+                border-width: 1px 0 0 0;
+                width: 35px;
+                height: 0px;
+                position: absolute;
+                left: 66px;
+                top: 443px;
+                transform-origin: 0 0;
+                transform: rotate(90deg) scale(1, 1);
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .line-8 {
+                  width: 80%;
+                }
+
+                .line-7 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .line-8 {
+                  width: 90%;
+                }
+
+                .line-7 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .line-7 {
+                border-style: solid;
+                border-color: rgba(138, 169, 181, 0.24);
+                border-width: 1px 0 0 0;
+                width: 35px;
+                height: 0px;
+                position: absolute;
+                left: 66px;
+                top: 508px;
+                transform-origin: 0 0;
+                transform: rotate(90deg) scale(1, 1);
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .line-7 {
+                  width: 80%;
+                }
+
+                ._00-24 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .line-7 {
+                  width: 90%;
+                }
+
+                ._00-24 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              ._00-24 {
+                color: #888888;
+                text-align: left;
+                font: 400 10px "Roboto", sans-serif;
+                position: absolute;
+                left: 20px;
+                top: 266px;
+                width: 39px;
+                height: 10px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                ._00-24 {
+                  width: 80%;
+                }
+
+                .elapsed-time {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                ._00-24 {
+                  width: 90%;
+                }
+
+                .elapsed-time {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .elapsed-time {
+                color: #888888;
+                text-align: left;
+                font: 400 9px "Roboto", sans-serif;
+                position: absolute;
+                left: 256px;
+                top: 185px;
+                width: 59px;
+                height: 10px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .elapsed-time {
+                  width: 80%;
+                }
+
+                ._02-23 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .elapsed-time {
+                  width: 90%;
+                }
+
+                ._02-23 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              ._02-23 {
+                color: #888888;
+                text-align: left;
+                font: 400 10px "Roboto", sans-serif;
+                position: absolute;
+                left: 20px;
+                top: 330px;
+                width: 39px;
+                height: 10px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                ._02-23 {
+                  width: 80%;
+                }
+
+                ._00-15 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                ._02-23 {
+                  width: 90%;
+                }
+
+                ._00-15 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              ._00-15 {
+                color: #888888;
+                text-align: left;
+                font: 400 10px "Roboto", sans-serif;
+                position: absolute;
+                left: 20px;
+                top: 391px;
+                width: 39px;
+                height: 10px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                ._00-15 {
+                  width: 80%;
+                }
+
+                .frame-1502 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                ._00-15 {
+                  width: 90%;
+                }
+
+                .frame-1502 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .frame-1502 {
+                background: #ffffff;
+                border-radius: 4px;
+                border-style: solid;
+                border-color: #f2f2f2;
+                border-width: 1px;
+                padding: 4px;
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                align-items: center;
+                justify-content: center;
+                width: 45px;
+                height: 16px;
+                position: absolute;
+                left: 329px;
+                top: 183px;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .frame-1502 {
+                  width: 80%;
+                }
+
+                ._02-45 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .frame-1502 {
+                  width: 90%;
+                }
+
+                ._02-45 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              ._02-45 {
+                color: #ff0042;
+                text-align: left;
+                font: 400 10px "Roboto", sans-serif;
+                position: relative;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                ._02-45 {
+                  width: 80%;
+                }
+
+                .fa-solid-bed {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                ._02-45 {
+                  width: 90%;
+                }
+
+                .fa-solid-bed {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .fa-solid-bed {
+                position: absolute;
+                left: 59px;
+                top: 552px;
+                overflow: visible;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .fa-solid-bed {
+                  width: 80%;
+                }
+
+                .bi-umbrella-fill {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .fa-solid-bed {
+                  width: 90%;
+                }
+
+                .bi-umbrella-fill {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .bi-umbrella-fill {
+                width: 10px;
+                height: 10px;
+                position: absolute;
+                left: 357px;
+                top: 115px;
+                overflow: hidden;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .bi-umbrella-fill {
+                  width: 80%;
+                }
+
+                .group10 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .bi-umbrella-fill {
+                  width: 90%;
+                }
+
+                .group10 {
+                  width: 100%;
+                  height: auto;
+                  padding: 10px;
+                }
+              }
+              .group10 {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                overflow: visible;
+              }
+              /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+              @media (max-width: 768px) {
+                .group10 {
+                  width: 80%;
+                }
+              }
+              /* Media query for screens with a maximum width of 480px (e.g., mobile phones) */
+              @media (max-width: 480px) {
+                .group10 {
+                  width: 90%;
+                }
+              }
+            </style>
+          </head>
+          <body>
+            <div class="adm-modal">
+              <div class="rectangle-33"></div>
+              <div class="ethan-wong">ETHAN WONG</div>
+              <div class="male-60-yrs-senior-citizen">
+                Male, 60 yrs (Senior Citizen)
+              </div>
+              <img class="male-1" src="male2.png" />
+              <div class="frame-148">
+                <div class="malaysia">Malaysia</div>
+              </div>
+              <div class="resident">Resident</div>
+              <div class="group-144">
+                <div class="rectangle-35"></div>
+                <div class="bed">Bed</div>
+                <div class="f-5-102">(F5-102)</div>
+                <div class="frame-152">
+                  <div class="single-bed">Single Bed</div>
+                </div>
+              </div>
+              <svg
+                class="fontisto-bed-patient"
+                width="13"
+                height="13"
+                viewBox="0 0 13 13"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.9719 5.83791V6.74447H1.03133V3.49426H0V9.99572H1.03133V8.50992H11.9719V10.1198H13V5.83686L11.9719 5.83791Z"
+                  fill="#ED8383"
+                />
+                <path
+                  d="M4.71736 5.84732V5.84784C4.71736 6.14322 4.46982 6.38308 4.16378 6.38308H2.05453C1.90771 6.38308 1.7669 6.32669 1.66309 6.22632C1.55927 6.12594 1.50095 5.9898 1.50095 5.84784V5.8468C1.50095 5.55142 1.74849 5.31155 2.05453 5.31155H4.16378C4.46928 5.31155 4.71736 5.55089 4.71736 5.8468V5.84732Z"
+                  fill="#ED8383"
+                />
+                <path
+                  d="M10.6941 3.75193H9.41037V2.51385H8.50037V3.75245H7.21933V4.6323H8.49983V5.87089H9.40983V4.6323H10.6936L10.6941 3.75193Z"
+                  fill="#ED8383"
+                />
+              </svg>
+
+              <div class="group-146">
+                <div class="rectangle-40"></div>
+                <div class="ward">Ward</div>
+                <div class="frame-150">
+                  <div class="ward-2-a">Ward 2A</div>
+                </div>
+                <svg
+                  class="fa-solid-hospital"
+                  width="8"
+                  height="9"
+                  viewBox="0 0 8 9"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_155)">
+                    <path
+                      d="M7.875 8.64844V9H0V8.64844C0 8.53195 0.0944473 8.4375 0.210937 8.4375H0.5625V2.10938C0.5625 1.87638 0.751377 1.6875 0.984375 1.6875H2.53125V0.421875C2.53125 0.188877 2.72013 0 2.95312 0H4.92187C5.15487 0 5.34375 0.188877 5.34375 0.421875V1.6875H6.89062C7.12362 1.6875 7.3125 1.87638 7.3125 2.10938V8.4375H7.66406C7.78055 8.4375 7.875 8.53195 7.875 8.64844ZM5.41406 3.375H4.71094C4.59445 3.375 4.5 3.46945 4.5 3.58594V4.28906C4.5 4.40555 4.59445 4.5 4.71094 4.5H5.41406C5.53055 4.5 5.625 4.40555 5.625 4.28906V3.58594C5.625 3.46945 5.53055 3.375 5.41406 3.375ZM2.46094 4.5H3.16406C3.28055 4.5 3.375 4.40555 3.375 4.28906V3.58594C3.375 3.46945 3.28055 3.375 3.16406 3.375H2.46094C2.34445 3.375 2.25 3.46945 2.25 3.58594V4.28906C2.25 4.40555 2.34445 4.5 2.46094 4.5ZM4.28906 6.75H3.58594C3.46945 6.75 3.375 6.84445 3.375 6.96094V8.4375H4.5V6.96094C4.5 6.84445 4.40555 6.75 4.28906 6.75ZM5.41406 5.0625H4.71094C4.59445 5.0625 4.5 5.15695 4.5 5.27344V5.97656C4.5 6.09305 4.59445 6.1875 4.71094 6.1875H5.41406C5.53055 6.1875 5.625 6.09305 5.625 5.97656V5.27344C5.625 5.15695 5.53055 5.0625 5.41406 5.0625ZM3.375 5.27344C3.375 5.15695 3.28055 5.0625 3.16406 5.0625H2.46094C2.34445 5.0625 2.25 5.15695 2.25 5.27344V5.97656C2.25 6.09305 2.34445 6.1875 2.46094 6.1875H3.16406C3.28055 6.1875 3.375 6.09305 3.375 5.97656V5.27344ZM3.19922 1.6875H3.65625V2.14453C3.65625 2.1725 3.66736 2.19933 3.68714 2.21911C3.70692 2.23889 3.73375 2.25 3.76172 2.25H4.11328C4.14125 2.25 4.16808 2.23889 4.18786 2.21911C4.20764 2.19933 4.21875 2.1725 4.21875 2.14453V1.6875H4.67578C4.70375 1.6875 4.73058 1.67639 4.75036 1.65661C4.77014 1.63683 4.78125 1.61 4.78125 1.58203V1.23047C4.78125 1.2025 4.77014 1.17567 4.75036 1.15589C4.73058 1.13611 4.70375 1.125 4.67578 1.125H4.21875V0.667969C4.21875 0.639997 4.20764 0.61317 4.18786 0.593391C4.16808 0.573612 4.14125 0.5625 4.11328 0.5625H3.76172C3.73375 0.5625 3.70692 0.573612 3.68714 0.593391C3.66736 0.61317 3.65625 0.639997 3.65625 0.667969V1.125H3.19922C3.17125 1.125 3.14442 1.13611 3.12464 1.15589C3.10486 1.17567 3.09375 1.2025 3.09375 1.23047V1.58203C3.09375 1.61 3.10486 1.63683 3.12464 1.65661C3.14442 1.67639 3.17125 1.6875 3.19922 1.6875Z"
+                      fill="#ED8383"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_155">
+                      <rect width="7.875" height="9" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div class="group-145">
+                <div class="rectangle-37"></div>
+                <div class="payor">Payor</div>
+                <div class="frame-151">
+                  <div class="aia-bhd-individual">AIA BHD (INDIVIDUAL)</div>
+                </div>
+              </div>
+              <div class="group-147">
+                <div class="rectangle-39"></div>
+                <div class="visit-id">Visit ID</div>
+                <div class="frame-149">
+                  <div class="_2735678">2735678</div>
+                </div>
+                <svg
+                  class="bx-bxs-calendar"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.5 10V3C10.5 2.4485 10.0515 2 9.5 2H8.5V1H7.5V2H4.5V1H3.5V2H2.5C1.9485 2 1.5 2.4485 1.5 3V10C1.5 10.5515 1.9485 11 2.5 11H9.5C10.0515 11 10.5 10.5515 10.5 10ZM4.5 9H3.5V8H4.5V9ZM4.5 7H3.5V6H4.5V7ZM6.5 9H5.5V8H6.5V9ZM6.5 7H5.5V6H6.5V7ZM8.5 9H7.5V8H8.5V9ZM8.5 7H7.5V6H8.5V7ZM9.5 4.5H2.5V3.5H9.5V4.5Z"
+                    fill="#ED8383"
+                  />
+                </svg>
+              </div>
+              <div class="group-148">
+                <div class="rectangle-38"></div>
+                <div class="patient-id">Patient ID</div>
+                <div class="frame-146">
+                  <div class="_5321344">5321344</div>
+                </div>
+                <svg
+                  class="bx-bxs-id-card"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 2H2C1.4485 2 1 2.4485 1 3V9C1 9.5515 1.4485 10 2 10H10C10.5515 10 11 9.5515 11 9V3C11 2.4485 10.5515 2 10 2ZM4.3575 4C4.933 4 5.3575 4.4245 5.3575 5C5.3575 5.5755 4.933 6 4.3575 6C3.782 6 3.3575 5.5755 3.3575 5C3.3575 4.4245 3.7815 4 4.3575 4ZM6.215 8H2.5V7.7675C2.5 7.081 3.338 6.375 4.3575 6.375C5.377 6.375 6.215 7.081 6.215 7.7675V8ZM9.5 7.5H7.5V6.5H9.5V7.5ZM9.5 5.5H7V4.5H9.5V5.5Z"
+                    fill="#ED8383"
+                  />
+                </svg>
+              </div>
+              <div class="rectangle-32"></div>
+              <div class="admission-journey">Admission Journey</div>
+              <div class="admission-request">Admission Request</div>
+              <div class="sent-for-igl-approval">Sent for IGL Approval</div>
+              <div class="received-igl-approval">Received IGL Approval</div>
+              <div class="requested-bed-confirmation">
+                Requested Bed Confirmation
+              </div>
+              <div class="admitted">Admitted</div>
+              <div class="accepted">Accepted</div>
+              <div class="ratha-ap">Ratha AP</div>
+              <div class="jim-chin">Jim Chin</div>
+              <div class="jim-chin2">Jim Chin</div>
+              <div class="jim-chin3">Jim Chin</div>
+              <div class="dec-06-2021-08-36-am">Dec 06 2021 08:36 AM</div>
+              <div class="dec-06-2021-09-00-am">Dec 06 2021 09:00 AM</div>
+              <div class="dec-06-2021-11-23-am">Dec 06 2021 11:23 AM</div>
+              <div class="dec-06-2021-11-38-am">Dec 06 2021 11:38 AM</div>
+              <div class="ellipse-3"></div>
+              <div class="ellipse-4"></div>
+              <div class="ellipse-5"></div>
+              <div class="ellipse-6"></div>
+              <div class="ellipse-9"></div>
+              <div class="ellipse-10"></div>
+              <div class="teenyicons-tick-solid">
+                <svg
+                  class="group"
+                  width="15"
+                  height="11"
+                  viewBox="0 0 15 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M14.707 0.999999L5.50003 10.207L0.29303 5L1.00003 4.293L5.50003 8.793L14 0.292999L14.707 0.999999Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <div class="teenyicons-tick-solid2">
+                <svg
+                  class="group2"
+                  width="15"
+                  height="11"
+                  viewBox="0 0 15 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M14.707 0.999999L5.50003 10.207L0.29303 5L1.00003 4.293L5.50003 8.793L14 0.292999L14.707 0.999999Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <div class="teenyicons-tick-solid3">
+                <svg
+                  class="group3"
+                  width="15"
+                  height="11"
+                  viewBox="0 0 15 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M14.707 0.999999L5.50003 10.207L0.29303 5L1.00003 4.293L5.50003 8.793L14 0.292999L14.707 0.999999Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <div class="teenyicons-tick-solid4">
+                <svg
+                  class="group4"
+                  width="15"
+                  height="11"
+                  viewBox="0 0 15 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M14.707 0.999999L5.50003 10.207L0.29303 5L1.00003 4.293L5.50003 8.793L14 0.292999L14.707 0.999999Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <div class="teenyicons-tick-solid5">
+                <svg
+                  class="group5"
+                  width="15"
+                  height="11"
+                  viewBox="0 0 15 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M14.707 0.999999L5.50003 10.207L0.29303 5L1.00003 4.293L5.50003 8.793L14 0.292999L14.707 0.999999Z"
+                    fill="white"
+                  />
+                </svg>
+
+                <svg
+                  class="fontisto-bed-patient2"
+                  width="15"
+                  height="14"
+                  viewBox="0 0 15 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_227)">
+                    <path
+                      d="M13.6439 6.33117V7.31432H1.17537V3.7895H0V10.8403H1.17537V9.22895H13.6439V10.9749H14.8156V6.33003L13.6439 6.33117Z"
+                      fill="#888888"
+                    />
+                    <path
+                      d="M5.37619 6.34139V6.34196C5.37619 6.66229 5.09407 6.92242 4.74529 6.92242H2.34147C2.17414 6.92242 2.01367 6.86126 1.89536 6.75241C1.77704 6.64355 1.71057 6.4959 1.71057 6.34196V6.34082C1.71057 6.02048 1.99268 5.76035 2.34147 5.76035H4.74529C5.09346 5.76035 5.37619 6.01992 5.37619 6.34082V6.34139Z"
+                      fill="#888888"
+                    />
+                    <path
+                      d="M12.1877 4.06894H10.7246V2.72626H9.68755V4.06951H8.2276V5.0237H9.68693V6.36695H10.724V5.0237H12.1871L12.1877 4.06894Z"
+                      fill="#888888"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_227">
+                      <rect width="14.8156" height="13.6313" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div class="healthicons-doctor">
+                <svg
+                  class="group6"
+                  width="9"
+                  height="9"
+                  viewBox="0 0 9 9"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.30756 6.66379C2.1693 6.74849 2.06543 6.87932 2.01428 7.03319C1.96314 7.18705 1.96803 7.35404 2.02808 7.50465C2.08812 7.65526 2.19947 7.7798 2.34245 7.85627C2.48542 7.93274 2.65082 7.95622 2.80943 7.92255C2.96804 7.88889 3.10964 7.80025 3.20923 7.6723C3.30882 7.54435 3.35998 7.38532 3.35367 7.2233C3.34736 7.06128 3.284 6.90671 3.17477 6.78688C3.06554 6.66706 2.91747 6.58969 2.75673 6.56846C2.74814 6.53771 2.74027 6.50676 2.73313 6.47564C2.70179 6.33406 2.67731 6.19105 2.65979 6.0471C2.64086 5.90161 2.63015 5.75517 2.62771 5.60848C2.62723 5.56819 2.62838 5.5279 2.63115 5.48771C2.71915 5.4625 2.8076 5.43958 2.89583 5.41964C2.9969 5.39673 3.05694 5.51589 3.10529 5.6126L3.125 5.65133H5.81748C5.86996 5.55187 5.9889 5.39329 6.10417 5.41964C6.227 5.4476 6.35052 5.48083 6.4729 5.51887L6.47221 5.5191C6.47175 5.51864 6.47175 5.51864 6.47221 5.51956C6.47312 5.52277 6.47817 5.53789 6.48321 5.56998C6.48894 5.6071 6.49283 5.65523 6.49467 5.71321C6.49787 5.82871 6.49123 5.96919 6.47771 6.11081C6.46396 6.25221 6.44356 6.38902 6.42065 6.49696C6.4156 6.52102 6.41056 6.54279 6.40552 6.5625H6.10417C6.06162 6.56252 6.01992 6.57439 5.98373 6.59677C5.94755 6.61915 5.91831 6.65117 5.89929 6.68923L5.67013 7.14756C5.65418 7.17936 5.64586 7.21443 5.64583 7.25V7.70833C5.64583 7.76911 5.66998 7.8274 5.71295 7.87038C5.75593 7.91335 5.81422 7.9375 5.875 7.9375H6.33333V7.47916H6.10417V7.30408L6.24579 7.02083H6.87921L7.02083 7.30408V7.47916H6.79167V7.9375H7.25C7.31078 7.9375 7.36907 7.91335 7.41205 7.87038C7.45502 7.8274 7.47917 7.76911 7.47917 7.70833V7.25C7.47914 7.21443 7.47082 7.17936 7.45488 7.14756L7.22571 6.68923C7.20669 6.65117 7.17745 6.61915 7.14127 6.59677C7.10508 6.57439 7.06338 6.56252 7.02083 6.5625H6.87508C6.8996 6.44035 6.92 6.29781 6.93375 6.15481C6.94887 6.00035 6.95667 5.84017 6.95277 5.70037L6.95254 5.69396C7.86646 6.0801 8.625 6.71512 8.625 7.38062V8.625H0.375V7.38062C0.375 6.68579 1.20229 6.02396 2.1696 5.64423C2.17213 5.78677 2.18565 5.94787 2.20513 6.10394C2.22621 6.27237 2.25485 6.43989 2.28648 6.57785C2.29335 6.60742 2.30023 6.63606 2.30756 6.66379ZM2.66667 7.4826C2.78996 7.4826 2.89583 7.38177 2.89583 7.25C2.89583 7.11846 2.78996 7.01739 2.66667 7.01739C2.54338 7.01739 2.4375 7.11823 2.4375 7.25C2.4375 7.38154 2.54338 7.4826 2.66667 7.4826Z"
+                    fill="#3762A4"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.49998 4.5C4.98621 4.5 5.45253 4.30685 5.79634 3.96303C6.14016 3.61921 6.33331 3.1529 6.33331 2.66667C6.33331 2.18044 6.14016 1.71412 5.79634 1.3703C5.45253 1.02649 4.98621 0.833333 4.49998 0.833333C4.01375 0.833333 3.54743 1.02649 3.20362 1.3703C2.8598 1.71412 2.66665 2.18044 2.66665 2.66667C2.66665 3.1529 2.8598 3.61921 3.20362 3.96303C3.54743 4.30685 4.01375 4.5 4.49998 4.5ZM4.49998 4.95833C5.76567 4.95833 6.79165 3.93235 6.79165 2.66667C6.79165 1.40098 5.76567 0.375 4.49998 0.375C3.23429 0.375 2.20831 1.40098 2.20831 2.66667C2.20831 3.93235 3.23429 4.95833 4.49998 4.95833Z"
+                    fill="#3762A4"
+                  />
+                </svg>
+              </div>
+              <div class="healthicons-doctor2">
+                <svg
+                  class="group7"
+                  width="9"
+                  height="9"
+                  viewBox="0 0 9 9"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.30756 6.66379C2.1693 6.74849 2.06543 6.87932 2.01428 7.03319C1.96314 7.18705 1.96803 7.35404 2.02808 7.50465C2.08812 7.65526 2.19947 7.7798 2.34245 7.85627C2.48542 7.93274 2.65082 7.95622 2.80943 7.92255C2.96804 7.88889 3.10964 7.80025 3.20923 7.6723C3.30882 7.54435 3.35998 7.38532 3.35367 7.2233C3.34736 7.06128 3.284 6.90671 3.17477 6.78688C3.06554 6.66706 2.91747 6.58969 2.75673 6.56846C2.74814 6.53771 2.74027 6.50676 2.73313 6.47564C2.70179 6.33406 2.67731 6.19105 2.65979 6.0471C2.64086 5.90161 2.63015 5.75517 2.62771 5.60848C2.62723 5.56819 2.62838 5.5279 2.63115 5.48771C2.71915 5.4625 2.8076 5.43958 2.89583 5.41964C2.9969 5.39673 3.05694 5.51589 3.10529 5.6126L3.125 5.65133H5.81748C5.86996 5.55187 5.9889 5.39329 6.10417 5.41964C6.227 5.4476 6.35052 5.48083 6.4729 5.51887L6.47221 5.5191C6.47175 5.51864 6.47175 5.51864 6.47221 5.51956C6.47312 5.52277 6.47817 5.53789 6.48321 5.56998C6.48894 5.6071 6.49283 5.65523 6.49467 5.71321C6.49787 5.82871 6.49123 5.96919 6.47771 6.11081C6.46396 6.25221 6.44356 6.38902 6.42065 6.49696C6.4156 6.52102 6.41056 6.54279 6.40552 6.5625H6.10417C6.06162 6.56252 6.01992 6.57439 5.98373 6.59677C5.94755 6.61915 5.91831 6.65117 5.89929 6.68923L5.67013 7.14756C5.65418 7.17936 5.64586 7.21443 5.64583 7.25V7.70833C5.64583 7.76911 5.66998 7.8274 5.71295 7.87038C5.75593 7.91335 5.81422 7.9375 5.875 7.9375H6.33333V7.47916H6.10417V7.30408L6.24579 7.02083H6.87921L7.02083 7.30408V7.47916H6.79167V7.9375H7.25C7.31078 7.9375 7.36907 7.91335 7.41205 7.87038C7.45502 7.8274 7.47917 7.76911 7.47917 7.70833V7.25C7.47914 7.21443 7.47082 7.17936 7.45488 7.14756L7.22571 6.68923C7.20669 6.65117 7.17745 6.61915 7.14127 6.59677C7.10508 6.57439 7.06338 6.56252 7.02083 6.5625H6.87508C6.8996 6.44035 6.92 6.29781 6.93375 6.15481C6.94887 6.00035 6.95667 5.84017 6.95277 5.70037L6.95254 5.69396C7.86646 6.0801 8.625 6.71512 8.625 7.38062V8.625H0.375V7.38062C0.375 6.68579 1.20229 6.02396 2.1696 5.64423C2.17213 5.78677 2.18565 5.94787 2.20513 6.10394C2.22621 6.27237 2.25485 6.43989 2.28648 6.57785C2.29335 6.60742 2.30023 6.63606 2.30756 6.66379ZM2.66667 7.4826C2.78996 7.4826 2.89583 7.38177 2.89583 7.25C2.89583 7.11846 2.78996 7.01739 2.66667 7.01739C2.54338 7.01739 2.4375 7.11823 2.4375 7.25C2.4375 7.38154 2.54338 7.4826 2.66667 7.4826Z"
+                    fill="#3762A4"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.49998 4.5C4.98621 4.5 5.45253 4.30685 5.79634 3.96303C6.14016 3.61921 6.33331 3.1529 6.33331 2.66667C6.33331 2.18044 6.14016 1.71412 5.79634 1.3703C5.45253 1.02649 4.98621 0.833333 4.49998 0.833333C4.01375 0.833333 3.54743 1.02649 3.20362 1.3703C2.8598 1.71412 2.66665 2.18044 2.66665 2.66667C2.66665 3.1529 2.8598 3.61921 3.20362 3.96303C3.54743 4.30685 4.01375 4.5 4.49998 4.5ZM4.49998 4.95833C5.76567 4.95833 6.79165 3.93235 6.79165 2.66667C6.79165 1.40098 5.76567 0.375 4.49998 0.375C3.23429 0.375 2.20831 1.40098 2.20831 2.66667C2.20831 3.93235 3.23429 4.95833 4.49998 4.95833Z"
+                    fill="#3762A4"
+                  />
+                </svg>
+              </div>
+              <div class="healthicons-doctor3">
+                <svg
+                  class="group8"
+                  width="9"
+                  height="9"
+                  viewBox="0 0 9 9"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.30756 6.66379C2.1693 6.74849 2.06543 6.87932 2.01428 7.03319C1.96314 7.18705 1.96803 7.35404 2.02808 7.50465C2.08812 7.65526 2.19947 7.7798 2.34245 7.85627C2.48542 7.93274 2.65082 7.95622 2.80943 7.92255C2.96804 7.88889 3.10964 7.80025 3.20923 7.6723C3.30882 7.54435 3.35998 7.38532 3.35367 7.2233C3.34736 7.06128 3.284 6.90671 3.17477 6.78688C3.06554 6.66706 2.91747 6.58969 2.75673 6.56846C2.74814 6.53771 2.74027 6.50676 2.73313 6.47564C2.70179 6.33406 2.67731 6.19105 2.65979 6.0471C2.64086 5.90161 2.63015 5.75517 2.62771 5.60848C2.62723 5.56819 2.62838 5.5279 2.63115 5.48771C2.71915 5.4625 2.8076 5.43958 2.89583 5.41964C2.9969 5.39673 3.05694 5.51589 3.10529 5.6126L3.125 5.65133H5.81748C5.86996 5.55187 5.9889 5.39329 6.10417 5.41964C6.227 5.4476 6.35052 5.48083 6.4729 5.51887L6.47221 5.5191C6.47175 5.51864 6.47175 5.51864 6.47221 5.51956C6.47312 5.52277 6.47817 5.53789 6.48321 5.56998C6.48894 5.6071 6.49283 5.65523 6.49467 5.71321C6.49787 5.82871 6.49123 5.96919 6.47771 6.11081C6.46396 6.25221 6.44356 6.38902 6.42065 6.49696C6.4156 6.52102 6.41056 6.54279 6.40552 6.5625H6.10417C6.06162 6.56252 6.01992 6.57439 5.98373 6.59677C5.94755 6.61915 5.91831 6.65117 5.89929 6.68923L5.67013 7.14756C5.65418 7.17936 5.64586 7.21443 5.64583 7.25V7.70833C5.64583 7.76911 5.66998 7.8274 5.71295 7.87038C5.75593 7.91335 5.81422 7.9375 5.875 7.9375H6.33333V7.47916H6.10417V7.30408L6.24579 7.02083H6.87921L7.02083 7.30408V7.47916H6.79167V7.9375H7.25C7.31078 7.9375 7.36907 7.91335 7.41205 7.87038C7.45502 7.8274 7.47917 7.76911 7.47917 7.70833V7.25C7.47914 7.21443 7.47082 7.17936 7.45488 7.14756L7.22571 6.68923C7.20669 6.65117 7.17745 6.61915 7.14127 6.59677C7.10508 6.57439 7.06338 6.56252 7.02083 6.5625H6.87508C6.8996 6.44035 6.92 6.29781 6.93375 6.15481C6.94887 6.00035 6.95667 5.84017 6.95277 5.70037L6.95254 5.69396C7.86646 6.0801 8.625 6.71512 8.625 7.38062V8.625H0.375V7.38062C0.375 6.68579 1.20229 6.02396 2.1696 5.64423C2.17213 5.78677 2.18565 5.94787 2.20513 6.10394C2.22621 6.27237 2.25485 6.43989 2.28648 6.57785C2.29335 6.60742 2.30023 6.63606 2.30756 6.66379ZM2.66667 7.4826C2.78996 7.4826 2.89583 7.38177 2.89583 7.25C2.89583 7.11846 2.78996 7.01739 2.66667 7.01739C2.54338 7.01739 2.4375 7.11823 2.4375 7.25C2.4375 7.38154 2.54338 7.4826 2.66667 7.4826Z"
+                    fill="#3762A4"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.49998 4.5C4.98621 4.5 5.45253 4.30685 5.79634 3.96303C6.14016 3.61921 6.33331 3.1529 6.33331 2.66667C6.33331 2.18044 6.14016 1.71412 5.79634 1.3703C5.45253 1.02649 4.98621 0.833333 4.49998 0.833333C4.01375 0.833333 3.54743 1.02649 3.20362 1.3703C2.8598 1.71412 2.66665 2.18044 2.66665 2.66667C2.66665 3.1529 2.8598 3.61921 3.20362 3.96303C3.54743 4.30685 4.01375 4.5 4.49998 4.5ZM4.49998 4.95833C5.76567 4.95833 6.79165 3.93235 6.79165 2.66667C6.79165 1.40098 5.76567 0.375 4.49998 0.375C3.23429 0.375 2.20831 1.40098 2.20831 2.66667C2.20831 3.93235 3.23429 4.95833 4.49998 4.95833Z"
+                    fill="#3762A4"
+                  />
+                </svg>
+              </div>
+              <div class="healthicons-doctor4">
+                <svg
+                  class="group9"
+                  width="9"
+                  height="9"
+                  viewBox="0 0 9 9"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.30756 6.66379C2.1693 6.74849 2.06543 6.87932 2.01428 7.03319C1.96314 7.18705 1.96803 7.35404 2.02808 7.50465C2.08812 7.65526 2.19947 7.7798 2.34245 7.85627C2.48542 7.93274 2.65082 7.95622 2.80943 7.92255C2.96804 7.88889 3.10964 7.80025 3.20923 7.6723C3.30882 7.54435 3.35998 7.38532 3.35367 7.2233C3.34736 7.06128 3.284 6.90671 3.17477 6.78688C3.06554 6.66706 2.91747 6.58969 2.75673 6.56846C2.74814 6.53771 2.74027 6.50676 2.73313 6.47564C2.70179 6.33406 2.67731 6.19105 2.65979 6.0471C2.64086 5.90161 2.63015 5.75517 2.62771 5.60848C2.62723 5.56819 2.62838 5.5279 2.63115 5.48771C2.71915 5.4625 2.8076 5.43958 2.89583 5.41964C2.9969 5.39673 3.05694 5.51589 3.10529 5.6126L3.125 5.65133H5.81748C5.86996 5.55187 5.9889 5.39329 6.10417 5.41964C6.227 5.4476 6.35052 5.48083 6.4729 5.51887L6.47221 5.5191C6.47175 5.51864 6.47175 5.51864 6.47221 5.51956C6.47312 5.52277 6.47817 5.53789 6.48321 5.56998C6.48894 5.6071 6.49283 5.65523 6.49467 5.71321C6.49787 5.82871 6.49123 5.96919 6.47771 6.11081C6.46396 6.25221 6.44356 6.38902 6.42065 6.49696C6.4156 6.52102 6.41056 6.54279 6.40552 6.5625H6.10417C6.06162 6.56252 6.01992 6.57439 5.98373 6.59677C5.94755 6.61915 5.91831 6.65117 5.89929 6.68923L5.67013 7.14756C5.65418 7.17936 5.64586 7.21443 5.64583 7.25V7.70833C5.64583 7.76911 5.66998 7.8274 5.71295 7.87038C5.75593 7.91335 5.81422 7.9375 5.875 7.9375H6.33333V7.47916H6.10417V7.30408L6.24579 7.02083H6.87921L7.02083 7.30408V7.47916H6.79167V7.9375H7.25C7.31078 7.9375 7.36907 7.91335 7.41205 7.87038C7.45502 7.8274 7.47917 7.76911 7.47917 7.70833V7.25C7.47914 7.21443 7.47082 7.17936 7.45488 7.14756L7.22571 6.68923C7.20669 6.65117 7.17745 6.61915 7.14127 6.59677C7.10508 6.57439 7.06338 6.56252 7.02083 6.5625H6.87508C6.8996 6.44035 6.92 6.29781 6.93375 6.15481C6.94887 6.00035 6.95667 5.84017 6.95277 5.70037L6.95254 5.69396C7.86646 6.0801 8.625 6.71512 8.625 7.38062V8.625H0.375V7.38062C0.375 6.68579 1.20229 6.02396 2.1696 5.64423C2.17213 5.78677 2.18565 5.94787 2.20513 6.10394C2.22621 6.27237 2.25485 6.43989 2.28648 6.57785C2.29335 6.60742 2.30023 6.63606 2.30756 6.66379ZM2.66667 7.4826C2.78996 7.4826 2.89583 7.38177 2.89583 7.25C2.89583 7.11846 2.78996 7.01739 2.66667 7.01739C2.54338 7.01739 2.4375 7.11823 2.4375 7.25C2.4375 7.38154 2.54338 7.4826 2.66667 7.4826Z"
+                    fill="#3762A4"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.49998 4.5C4.98621 4.5 5.45253 4.30685 5.79634 3.96303C6.14016 3.61921 6.33331 3.1529 6.33331 2.66667C6.33331 2.18044 6.14016 1.71412 5.79634 1.3703C5.45253 1.02649 4.98621 0.833333 4.49998 0.833333C4.01375 0.833333 3.54743 1.02649 3.20362 1.3703C2.8598 1.71412 2.66665 2.18044 2.66665 2.66667C2.66665 3.1529 2.8598 3.61921 3.20362 3.96303C3.54743 4.30685 4.01375 4.5 4.49998 4.5ZM4.49998 4.95833C5.76567 4.95833 6.79165 3.93235 6.79165 2.66667C6.79165 1.40098 5.76567 0.375 4.49998 0.375C3.23429 0.375 2.20831 1.40098 2.20831 2.66667C2.20831 3.93235 3.23429 4.95833 4.49998 4.95833Z"
+                    fill="#3762A4"
+                  />
+                </svg>
+              </div>
+              <div class="line-1"></div>
+              <div class="line-2"></div>
+              <div class="line-3"></div>
+              <div class="line-8"></div>
+              <div class="line-7"></div>
+              <div class="_00-24">00:24</div>
+              <div class="elapsed-time">Elapsed Time</div>
+              <div class="_02-23">02:23</div>
+              <div class="_00-15">00:15</div>
+              <div class="frame-1502">
+                <div class="_02-45">02:45</div>
+              </div>
+              <svg
+                class="fa-solid-bed"
+                width="15"
+                height="10"
+                viewBox="0 0 15 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.125 4.83998C5.15883 4.83998 6 4.16143 6 3.32748C6 2.49353 5.15883 1.81499 4.125 1.81499C3.09117 1.81499 2.25 2.49353 2.25 3.32748C2.25 4.16143 3.09117 4.83998 4.125 4.83998ZM12.375 2.41999H7.125C6.91781 2.41999 6.75 2.55535 6.75 2.72249V5.44497H1.5V1.51249C1.5 1.34536 1.33219 1.20999 1.125 1.20999H0.375C0.167812 1.20999 0 1.34536 0 1.51249V8.16746C0 8.33459 0.167812 8.46996 0.375 8.46996H1.125C1.33219 8.46996 1.5 8.33459 1.5 8.16746V7.25997H13.5V8.16746C13.5 8.33459 13.6678 8.46996 13.875 8.46996H14.625C14.8322 8.46996 15 8.33459 15 8.16746V4.53748C15 3.36794 13.8248 2.41999 12.375 2.41999Z"
+                  fill="#888888"
+                />
+              </svg>
+
+              <div class="bi-umbrella-fill">
+                <svg
+                  class="group10"
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M5 0C5.08288 0 5.16237 0.032924 5.22097 0.0915291C5.27958 0.150134 5.3125 0.22962 5.3125 0.3125V0.63375C7.89062 0.77375 10 2.6375 10 5C10 5 10 5.3125 9.6875 5.3125C9.59437 5.3125 9.4675 5.22187 9.4675 5.22187L9.465 5.21937L9.44938 5.205C9.34206 5.11179 9.22589 5.02932 9.1025 4.95875C8.80577 4.78493 8.46887 4.69144 8.125 4.6875C7.72625 4.6875 7.38875 4.82062 7.1475 4.95875C7.02412 5.02932 6.90794 5.11179 6.80062 5.205L6.785 5.21937L6.78312 5.22125C6.78312 5.22125 6.65562 5.3125 6.5625 5.3125C6.46938 5.3125 6.3425 5.22187 6.3425 5.22187L6.34 5.21937L6.32438 5.205C6.21706 5.11179 6.10088 5.02932 5.9775 4.95875C5.77155 4.83976 5.54656 4.7573 5.3125 4.715V8.4375H5H5.3125V8.46187L5.30937 8.51375C5.2926 8.75325 5.22934 8.98719 5.12312 9.2025C5.01502 9.4244 4.85059 9.61405 4.64625 9.7525C4.4125 9.90687 4.11688 10 3.75 10C3.38313 10 3.08687 9.9075 2.85375 9.7525C2.64937 9.61409 2.48493 9.42443 2.37687 9.2025C2.26306 8.97147 2.19877 8.7192 2.18812 8.46187V8.44625L2.1875 8.44063V8.43875C2.1875 8.43875 2.1875 8.4375 2.5 8.4375H2.1875V8.125C2.1875 8.04212 2.22042 7.96263 2.27903 7.90403C2.33763 7.84542 2.41712 7.8125 2.5 7.8125C2.58288 7.8125 2.66237 7.84542 2.72097 7.90403C2.77958 7.96263 2.8125 8.04212 2.8125 8.125V8.44125L2.81437 8.46875C2.82531 8.62645 2.8667 8.78054 2.93625 8.9225C2.99563 9.04187 3.08 9.15187 3.20062 9.23187C3.31937 9.31125 3.49187 9.375 3.75 9.375C4.00812 9.375 4.18062 9.31125 4.29938 9.23187C4.42 9.15187 4.50437 9.04187 4.56437 8.9225C4.63789 8.77219 4.67979 8.6084 4.6875 8.44125V4.715C4.45344 4.7573 4.22845 4.83976 4.0225 4.95875C3.89305 5.03297 3.77158 5.1203 3.66 5.21937L3.6575 5.22187C3.6575 5.22187 3.53125 5.3125 3.4375 5.3125C3.34437 5.3125 3.2175 5.22187 3.2175 5.22187L3.215 5.21937C3.10342 5.1203 2.98195 5.03297 2.8525 4.95875C2.55577 4.78493 2.21887 4.69144 1.875 4.6875C1.47625 4.6875 1.13937 4.82062 0.8975 4.95875C0.768051 5.03297 0.646579 5.1203 0.535 5.21937L0.5325 5.22187C0.5325 5.22187 0.40625 5.3125 0.3125 5.3125C0 5.3125 0 5 0 5C0 2.6375 2.10938 0.77375 4.6875 0.63375V0.3125C4.6875 0.22962 4.72042 0.150134 4.77903 0.0915291C4.83763 0.032924 4.91712 0 5 0V0Z"
+                    fill="#ED8383"
+                  />
+                </svg>
+              </div>
+            </div>
+          </body>
+        </html>
+
+        <!-- Your patient journey content goes here -->
+      </div>
+    </div>
+
+    <script>
+      // Add your JavaScript code here
+      document
+        .getElementById("openModal")
+        .addEventListener("click", function () {
+          document.getElementById("myModal").style.display = "block";
+        });
+
+      document
+        .getElementsByClassName("close")[0]
+        .addEventListener("click", function () {
+          document.getElementById("myModal").style.display = "none";
+        });
+
+      window.addEventListener("click", function (event) {
+        if (event.target == document.getElementById("myModal")) {
+          document.getElementById("myModal").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
